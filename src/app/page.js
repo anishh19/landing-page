@@ -3,8 +3,8 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="flex min-h-screen gap-4 flex-col items-center justify-between ">
-      <section className="flex py-16 h-max w-full">
-        <div className="w-1/2 relative">
+      <section className="flex items-center  flex-col-reverse   lg:flex-row py-8 lg:py-16 h-max w-full">
+        <div className="w-[80vw] h-[50vh] lg:w-1/2 relative">
           <Image
             src={"/person.png"}
             alt="potrait"
@@ -13,7 +13,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="space-y-4 w-1/3">
+        <div className="space-y-4 p-4 lg:p-0 w-full lg:w-1/3">
           <h3 className="text-2xl text-[#56b6ab]">ABOUT PERSONAL</h3>
           <h1 className="text-6xl">
             Hello, Im Mike <span className="text-[#56b6ab]">Washoski</span>
@@ -69,35 +69,36 @@ export default function Home() {
       </section>
       <section className="items-center justify-center gap-8 bg-gradient-to-l from-[#121212] to-[#1c322d] flex w-full">
         {["a", "b", "c", "d", "e"].map((each) => (
-          <Image
-            key={each}
-            src={`/logo${each}.png`}
-            alt="potrait"
-            width={200}
-            height={200}
-          />
+          <div key={each} className="w-1/6 h-24 relative">
+            <Image
+              src={`/logo${each}.png`}
+              alt="potrait"
+              style={{ objectFit: "contain" }}
+              fill={true}
+            />
+          </div>
         ))}
       </section>
       <section className="flex flex-col justify-center items-center text-center gap-4 p-4">
-        <h3 className="  text-[#56b6ab] text-2xl">OUR SERVICES</h3>
+        <h3 className=" text-[#56b6ab] text-2xl">OUR SERVICES</h3>
         <h1 className="text-5xl">
           What We <span className=" text-[#56b6ab]">Do</span>.
         </h1>
         <hr className="border-[#56b6ab] border-2 w-24"></hr>
-        <p className="w-1/2 text-[#dcdddf]">
+        <p className="w-[80] lg:w-1/2 text-[#dcdddf]">
           Lo clarem ipsum dolor sit amet, consectetur adipiscing elit.
           Vestibulum aliquam vehicula aliquam. Nunc auctor velit ac quam
           condimentum semper sollicitudin.{" "}
         </p>
-        <div className="flex gap-4 justify-center">
-          <div className="p-4 w-1/5 h-min text-center gap-4 flex flex-col items-center bg-gradient-to-b from-[#000000] to-[#1c322d]">
+        <div className="flex flex-wrap gap-4 justify-center">
+          <div className="p-4 w-full lg:w-1/5 h-min text-center gap-4 flex flex-col items-center bg-gradient-to-b from-[#000000] to-[#1c322d]">
             <Image src={"/pr.png"} alt="potrait" width={80} height={80} />
             <h4 className="text-2xl">Brand Identity</h4>
             <p className="text-sm text-[#dcdddf] text-wrap">
               We bring the right people together to challange.
             </p>
           </div>
-          <div className="p-4 mt-8 w-1/5 text-center gap-4 flex flex-col items-center bg-[#141414]">
+          <div className="p-4 mt-8 w-full lg:w-1/5 text-center gap-4 flex flex-col items-center bg-[#141414]">
             <Image
               src={"/web-design.png"}
               alt="potrait"
@@ -109,14 +110,14 @@ export default function Home() {
               We bring the right people together to challange.
             </p>
           </div>
-          <div className="p-4 w-1/5 h-min text-center gap-4 flex flex-col items-center bg-gradient-to-b from-[#000000] to-[#1c322d]">
+          <div className="p-4 w-full lg:w-1/5 h-min text-center gap-4 flex flex-col items-center bg-gradient-to-b from-[#000000] to-[#1c322d]">
             <Image src={"/pr.png"} alt="potrait" width={80} height={80} />
             <h4 className="text-2xl">UI & UX Design</h4>
             <p className="text-sm text-[#dcdddf] text-wrap">
               We bring the right people together to challange.
             </p>
           </div>
-          <div className="p-4 mt-8 w-1/5 text-center gap-4 flex flex-col items-center bg-[#141414]">
+          <div className="p-4 mt-8 w-full lg:w-1/5 text-center gap-4 flex flex-col items-center bg-[#141414]">
             <Image
               src={"/web-design.png"}
               alt="potrait"
@@ -130,19 +131,19 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex w-full bg-[#000000] flex-col justify-center items-center text-center gap-4 p-4">
+      <section className="flex w-full bg-black flex-col justify-center items-center text-center gap-4 p-4">
         <h3 className=" text-[#56b6ab] text-2xl">OUR TEAM</h3>
         <h1 className="text-5xl">
           Meet Expert <span className=" text-[#56b6ab]">Team</span>.
         </h1>
         <hr className="border-[#56b6ab] border-2 w-24"></hr>
-        <p className="w-1/2 text-[#dcdddf]">
+        <p className="w-[80] lg:w-1/2 text-[#dcdddf]">
           Lo clarem ipsum dolor sit amet, consectetur adipiscing elit.
           Vestibulum aliquam vehicula aliquam. Nunc auctor velit ac quam
           condimentum semper sollicitudin.{" "}
         </p>
         <div className="flex w-full gap-8 flex-wrap py-8 justify-center">
-          <div className="p-4 w-1/3 h-min  text-left gap-8 flex  items-center bg-[#141414]">
+          <div className="p-4 w-full xl:w-1/3 h-min  text-left gap-8 flex  items-center bg-[#141414]">
             <Image
               src={"/teama.png"}
               alt="potrait"
@@ -196,7 +197,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="p-4 w-1/3 h-min  text-left gap-8 flex  items-center bg-[#141414]">
+          <div className="p-4  w-full xl:w-1/3 h-min  text-left gap-8 flex  items-center bg-[#141414]">
             <Image
               src={"/teamb.png"}
               alt="potrait"
@@ -250,7 +251,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="p-4 w-1/3 h-min  text-left gap-8 flex  items-center bg-[#141414]">
+          <div className="p-4  w-full xl:w-1/3 h-min  text-left gap-8 flex  items-center bg-[#141414]">
             <Image
               src={"/teamc.png"}
               alt="potrait"
@@ -304,7 +305,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="p-4 w-1/3 h-min  text-left gap-8 flex  items-center bg-[#141414]">
+          <div className="p-4  w-full xl:w-1/3 h-min  text-left gap-8 flex  items-center bg-[#141414]">
             <Image
               src={"/teamd.png"}
               alt="potrait"
